@@ -76,6 +76,7 @@
  (attr_default)
  (attr_addrsize)
  (attr_value)
+ (attr_bank)
 ] @property
 
 ; Literals

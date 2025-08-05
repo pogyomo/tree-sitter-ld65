@@ -291,6 +291,31 @@
               ]
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "attr_bank"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "="
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          ]
         }
       ]
     },
@@ -1900,6 +1925,11 @@
     "attr_value": {
       "type": "PATTERN",
       "value": "value",
+      "flags": "i"
+    },
+    "attr_bank": {
+      "type": "PATTERN",
+      "value": "bank",
       "flags": "i"
     },
     "_expression": {

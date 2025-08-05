@@ -576,6 +576,10 @@
       "required": true,
       "types": [
         {
+          "type": "attr_bank",
+          "named": true
+        },
+        {
           "type": "attr_define",
           "named": true
         },
@@ -978,6 +982,10 @@
   },
   {
     "type": "attr_align",
+    "named": true
+  },
+  {
+    "type": "attr_bank",
     "named": true
   },
   {

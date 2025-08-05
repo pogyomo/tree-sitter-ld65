@@ -35,6 +35,7 @@ module.exports = grammar({
         seq($.attr_fill, optional("="), choice($.keyword_yes, $.keyword_no)),
         seq($.attr_define, optional("="), choice($.keyword_yes, $.keyword_no)),
         seq($.attr_file, optional("="), choice($.string, $.default_file)),
+        seq($.attr_bank, optional("="), $._expression),
       ),
 
     // Segments section
@@ -283,6 +284,7 @@ module.exports = grammar({
     attr_default: (_) => /default/i,
     attr_addrsize: (_) => /addrsize/i,
     attr_value: (_) => /value/i,
+    attr_bank: (_) => /bank/i,
 
     // Expression
     _expression: ($) =>

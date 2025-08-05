@@ -1,0 +1,1227 @@
+[
+  {
+    "type": "attr_export",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "attr_import",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_expression",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "default_start_address",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "default_start_address",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
+    "type": "config",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "features",
+          "named": true
+        },
+        {
+          "type": "files",
+          "named": true
+        },
+        {
+          "type": "formats",
+          "named": true
+        },
+        {
+          "type": "memory",
+          "named": true
+        },
+        {
+          "type": "segments",
+          "named": true
+        },
+        {
+          "type": "symbols",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "features",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "features_condes",
+          "named": true
+        },
+        {
+          "type": "features_startaddress",
+          "named": true
+        },
+        {
+          "type": "keyword_features",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "features_condes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "features_condes_attr",
+          "named": true
+        },
+        {
+          "type": "field_condes",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "features_condes_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_count",
+          "named": true
+        },
+        {
+          "type": "attr_import",
+          "named": true
+        },
+        {
+          "type": "attr_label",
+          "named": true
+        },
+        {
+          "type": "attr_order",
+          "named": true
+        },
+        {
+          "type": "attr_segment",
+          "named": true
+        },
+        {
+          "type": "attr_type",
+          "named": true
+        },
+        {
+          "type": "keyword_constructor",
+          "named": true
+        },
+        {
+          "type": "keyword_decreasing",
+          "named": true
+        },
+        {
+          "type": "keyword_destructor",
+          "named": true
+        },
+        {
+          "type": "keyword_increasing",
+          "named": true
+        },
+        {
+          "type": "keyword_interruptor",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "features_startaddress",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "features_startaddress_attr",
+          "named": true
+        },
+        {
+          "type": "field_startaddress",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "features_startaddress_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_default",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "default_start_address",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_atari",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "field_o65",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "files",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "files_field",
+          "named": true
+        },
+        {
+          "type": "keyword_files",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "files_field",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "default_file",
+          "named": true
+        },
+        {
+          "type": "files_field_attr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "files_field_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "default_file",
+          "named": true
+        },
+        {
+          "type": "keyword_atari",
+          "named": true
+        },
+        {
+          "type": "keyword_bin",
+          "named": true
+        },
+        {
+          "type": "keyword_o65",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "formats",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "formats_atari",
+          "named": true
+        },
+        {
+          "type": "formats_o65",
+          "named": true
+        },
+        {
+          "type": "keyword_formats",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "formats_atari",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_atari",
+          "named": true
+        },
+        {
+          "type": "formats_atari_attr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "formats_atari_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_initad",
+          "named": true
+        },
+        {
+          "type": "attr_runad",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "formats_o65",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_o65",
+          "named": true
+        },
+        {
+          "type": "formats_o65_attr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "formats_o65_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_export",
+          "named": true
+        },
+        {
+          "type": "attr_import",
+          "named": true
+        },
+        {
+          "type": "attr_os",
+          "named": true
+        },
+        {
+          "type": "attr_type",
+          "named": true
+        },
+        {
+          "type": "attr_version",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "default_start_address",
+          "named": true
+        },
+        {
+          "type": "keyword_cc65",
+          "named": true
+        },
+        {
+          "type": "keyword_large",
+          "named": true
+        },
+        {
+          "type": "keyword_linux",
+          "named": true
+        },
+        {
+          "type": "keyword_opencbm",
+          "named": true
+        },
+        {
+          "type": "keyword_osa65",
+          "named": true
+        },
+        {
+          "type": "keyword_small",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyword_atari",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword_export",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword_import",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword_o65",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "memory",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_memory",
+          "named": true
+        },
+        {
+          "type": "memory_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "memory_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "memory_field_attr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "memory_field_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_define",
+          "named": true
+        },
+        {
+          "type": "attr_file",
+          "named": true
+        },
+        {
+          "type": "attr_fill",
+          "named": true
+        },
+        {
+          "type": "attr_size",
+          "named": true
+        },
+        {
+          "type": "attr_start",
+          "named": true
+        },
+        {
+          "type": "attr_type",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "default_file",
+          "named": true
+        },
+        {
+          "type": "default_start_address",
+          "named": true
+        },
+        {
+          "type": "keyword_no",
+          "named": true
+        },
+        {
+          "type": "keyword_ro",
+          "named": true
+        },
+        {
+          "type": "keyword_rw",
+          "named": true
+        },
+        {
+          "type": "keyword_yes",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "number",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "segments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_segments",
+          "named": true
+        },
+        {
+          "type": "segments_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "segments_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "segments_field_attr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "segments_field_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_align",
+          "named": true
+        },
+        {
+          "type": "attr_define",
+          "named": true
+        },
+        {
+          "type": "attr_load",
+          "named": true
+        },
+        {
+          "type": "attr_offset",
+          "named": true
+        },
+        {
+          "type": "attr_optional",
+          "named": true
+        },
+        {
+          "type": "attr_run",
+          "named": true
+        },
+        {
+          "type": "attr_start",
+          "named": true
+        },
+        {
+          "type": "attr_type",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "default_start_address",
+          "named": true
+        },
+        {
+          "type": "keyword_bss",
+          "named": true
+        },
+        {
+          "type": "keyword_no",
+          "named": true
+        },
+        {
+          "type": "keyword_overwrite",
+          "named": true
+        },
+        {
+          "type": "keyword_ro",
+          "named": true
+        },
+        {
+          "type": "keyword_rw",
+          "named": true
+        },
+        {
+          "type": "keyword_yes",
+          "named": true
+        },
+        {
+          "type": "keyword_zp",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "symbols",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_symbols",
+          "named": true
+        },
+        {
+          "type": "symbols_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "symbols_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "symbols_field_attr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "symbols_field_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attr_addrsize",
+          "named": true
+        },
+        {
+          "type": "attr_type",
+          "named": true
+        },
+        {
+          "type": "attr_value",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "default_start_address",
+          "named": true
+        },
+        {
+          "type": "keyword_abs",
+          "named": true
+        },
+        {
+          "type": "keyword_absolute",
+          "named": true
+        },
+        {
+          "type": "keyword_direct",
+          "named": true
+        },
+        {
+          "type": "keyword_dword",
+          "named": true
+        },
+        {
+          "type": "keyword_export",
+          "named": true
+        },
+        {
+          "type": "keyword_far",
+          "named": true
+        },
+        {
+          "type": "keyword_import",
+          "named": true
+        },
+        {
+          "type": "keyword_long",
+          "named": true
+        },
+        {
+          "type": "keyword_near",
+          "named": true
+        },
+        {
+          "type": "keyword_weak",
+          "named": true
+        },
+        {
+          "type": "keyword_zeropage",
+          "named": true
+        },
+        {
+          "type": "keyword_zp",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "attr_addrsize",
+    "named": true
+  },
+  {
+    "type": "attr_align",
+    "named": true
+  },
+  {
+    "type": "attr_count",
+    "named": true
+  },
+  {
+    "type": "attr_default",
+    "named": true
+  },
+  {
+    "type": "attr_define",
+    "named": true
+  },
+  {
+    "type": "attr_file",
+    "named": true
+  },
+  {
+    "type": "attr_fill",
+    "named": true
+  },
+  {
+    "type": "attr_initad",
+    "named": true
+  },
+  {
+    "type": "attr_label",
+    "named": true
+  },
+  {
+    "type": "attr_load",
+    "named": true
+  },
+  {
+    "type": "attr_offset",
+    "named": true
+  },
+  {
+    "type": "attr_optional",
+    "named": true
+  },
+  {
+    "type": "attr_order",
+    "named": true
+  },
+  {
+    "type": "attr_os",
+    "named": true
+  },
+  {
+    "type": "attr_run",
+    "named": true
+  },
+  {
+    "type": "attr_runad",
+    "named": true
+  },
+  {
+    "type": "attr_segment",
+    "named": true
+  },
+  {
+    "type": "attr_size",
+    "named": true
+  },
+  {
+    "type": "attr_start",
+    "named": true
+  },
+  {
+    "type": "attr_type",
+    "named": true
+  },
+  {
+    "type": "attr_value",
+    "named": true
+  },
+  {
+    "type": "attr_version",
+    "named": true
+  },
+  {
+    "type": "default_file",
+    "named": true
+  },
+  {
+    "type": "default_start_address",
+    "named": true
+  },
+  {
+    "type": "field_condes",
+    "named": true
+  },
+  {
+    "type": "field_startaddress",
+    "named": true
+  },
+  {
+    "type": "keyword_abs",
+    "named": true
+  },
+  {
+    "type": "keyword_absolute",
+    "named": true
+  },
+  {
+    "type": "keyword_bin",
+    "named": true
+  },
+  {
+    "type": "keyword_bss",
+    "named": true
+  },
+  {
+    "type": "keyword_cc65",
+    "named": true
+  },
+  {
+    "type": "keyword_constructor",
+    "named": true
+  },
+  {
+    "type": "keyword_decreasing",
+    "named": true
+  },
+  {
+    "type": "keyword_destructor",
+    "named": true
+  },
+  {
+    "type": "keyword_direct",
+    "named": true
+  },
+  {
+    "type": "keyword_dword",
+    "named": true
+  },
+  {
+    "type": "keyword_far",
+    "named": true
+  },
+  {
+    "type": "keyword_features",
+    "named": true
+  },
+  {
+    "type": "keyword_files",
+    "named": true
+  },
+  {
+    "type": "keyword_formats",
+    "named": true
+  },
+  {
+    "type": "keyword_increasing",
+    "named": true
+  },
+  {
+    "type": "keyword_interruptor",
+    "named": true
+  },
+  {
+    "type": "keyword_large",
+    "named": true
+  },
+  {
+    "type": "keyword_linux",
+    "named": true
+  },
+  {
+    "type": "keyword_long",
+    "named": true
+  },
+  {
+    "type": "keyword_memory",
+    "named": true
+  },
+  {
+    "type": "keyword_near",
+    "named": true
+  },
+  {
+    "type": "keyword_no",
+    "named": true
+  },
+  {
+    "type": "keyword_opencbm",
+    "named": true
+  },
+  {
+    "type": "keyword_osa65",
+    "named": true
+  },
+  {
+    "type": "keyword_overwrite",
+    "named": true
+  },
+  {
+    "type": "keyword_ro",
+    "named": true
+  },
+  {
+    "type": "keyword_rw",
+    "named": true
+  },
+  {
+    "type": "keyword_segments",
+    "named": true
+  },
+  {
+    "type": "keyword_small",
+    "named": true
+  },
+  {
+    "type": "keyword_symbols",
+    "named": true
+  },
+  {
+    "type": "keyword_weak",
+    "named": true
+  },
+  {
+    "type": "keyword_yes",
+    "named": true
+  },
+  {
+    "type": "keyword_zeropage",
+    "named": true
+  },
+  {
+    "type": "keyword_zp",
+    "named": true
+  },
+  {
+    "type": "symbol",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]

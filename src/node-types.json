@@ -76,12 +76,6 @@
     }
   },
   {
-    "type": "comment",
-    "named": true,
-    "extra": true,
-    "fields": {}
-  },
-  {
     "type": "config",
     "named": true,
     "root": true,
@@ -925,10 +919,6 @@
     "named": false
   },
   {
-    "type": "#",
-    "named": false
-  },
-  {
     "type": "$",
     "named": false
   },
@@ -1067,6 +1057,11 @@
   {
     "type": "attr_version",
     "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
   },
   {
     "type": "default_file",

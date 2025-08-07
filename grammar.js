@@ -326,6 +326,6 @@ module.exports = grammar({
     default_file: (_) => "%O",
 
     // Comment
-    comment: (_) => seq("#", /.*/),
+    comment: (_) => token(seq("#", /.*/)),
   },
 });

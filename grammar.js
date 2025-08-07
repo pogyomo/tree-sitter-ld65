@@ -19,12 +19,13 @@ module.exports = grammar({
       ),
 
     // Memory section
-    memory: ($) => seq($.keyword_memory, "{", repeat($.memory_field), "}"),
+    memory: ($) =>
+      seq($.keyword_memory, "{", repeat(field("field", $.memory_field)), "}"),
     memory_field: ($) =>
       seq(
         field("name", $.symbol),
         ":",
-        repeat(seq($.memory_field_attr, optional(","))),
+        repeat(seq(field("attr", $.memory_field_attr), optional(","))),
         ";",
       ),
     memory_field_attr: ($) =>
@@ -40,12 +41,17 @@ module.exports = grammar({
 
     // Segments section
     segments: ($) =>
-      seq($.keyword_segments, "{", repeat($.segments_field), "}"),
+      seq(
+        $.keyword_segments,
+        "{",
+        repeat(field("field", $.segments_field)),
+        "}",
+      ),
     segments_field: ($) =>
       seq(
         field("name", $.symbol),
         ":",
-        repeat(seq($.segments_field_attr, optional(","))),
+        repeat(seq(field("attr", $.segments_field_attr), optional(","))),
         ";",
       ),
     segments_field_attr: ($) =>
@@ -75,12 +81,13 @@ module.exports = grammar({
       ),
 
     // Files section
-    files: ($) => seq($.keyword_files, "{", repeat($.files_field), "}"),
+    files: ($) =>
+      seq($.keyword_files, "{", repeat(field("field", $.files_field)), "}"),
     files_field: ($) =>
       seq(
-        $.default_file,
+        field("name", $.default_file),
         ":",
-        repeat(seq($.files_field_attr, optional(","))),
+        repeat(seq(field("attr", $.files_field_attr), optional(","))),
         ";",
       ),
     files_field_attr: ($) =>
@@ -92,12 +99,13 @@ module.exports = grammar({
 
     // Formats section
     formats: ($) => seq($.keyword_formats, "{", repeat($._formats_field), "}"),
-    _formats_field: ($) => choice($.formats_o65, $.formats_atari),
+    _formats_field: ($) =>
+      choice(field("o65", $.formats_o65), field("atari", $.formats_atari)),
     formats_o65: ($) =>
       seq(
-        $.field_o65,
+        field("name", $.field_o65),
         ":",
-        repeat(seq($.formats_o65_attr, optional(","))),
+        repeat(seq(field("attr", $.formats_o65_attr), optional(","))),
         ";",
       ),
     formats_o65_attr: ($) =>
@@ -123,9 +131,9 @@ module.exports = grammar({
       ),
     formats_atari: ($) =>
       seq(
-        $.field_atari,
+        field("name", $.field_atari),
         ":",
-        repeat(seq($.formats_atari_attr, optional(","))),
+        repeat(seq(field("attr", $.formats_atari_attr), optional(","))),
         ";",
       ),
     formats_atari_attr: ($) =>
@@ -137,12 +145,16 @@ module.exports = grammar({
     // Features
     features: ($) =>
       seq($.keyword_features, "{", repeat($._features_field), "}"),
-    _features_field: ($) => choice($.features_condes, $.features_startaddress),
+    _features_field: ($) =>
+      choice(
+        field("condes", $.features_condes),
+        field("startaddress", $.features_startaddress),
+      ),
     features_condes: ($) =>
       seq(
-        $.field_condes,
+        field("name", $.field_condes),
         ":",
-        repeat(seq($.features_condes_attr, optional(","))),
+        repeat(seq(field("attr", $.features_condes_attr), optional(","))),
         ";",
       ),
     features_condes_attr: ($) =>
@@ -169,9 +181,9 @@ module.exports = grammar({
       ),
     features_startaddress: ($) =>
       seq(
-        $.field_startaddress,
+        field("name", $.field_startaddress),
         ":",
-        repeat(seq($.features_startaddress_attr, optional(","))),
+        repeat(seq(field("attr", $.features_startaddress_attr), optional(","))),
         ";",
       ),
     features_startaddress_attr: ($) =>
@@ -212,79 +224,79 @@ module.exports = grammar({
       ),
 
     // Keywords
-    keyword_memory: (_) => /memory/i,
-    keyword_segments: (_) => /segments/i,
-    keyword_files: (_) => /files/i,
-    keyword_formats: (_) => /formats/i,
-    keyword_features: (_) => /features/i,
-    keyword_symbols: (_) => /symbols/i,
+    keyword_memory: (_) => make_keyword("memory"),
+    keyword_segments: (_) => make_keyword("segments"),
+    keyword_files: (_) => make_keyword("files"),
+    keyword_formats: (_) => make_keyword("formats"),
+    keyword_features: (_) => make_keyword("features"),
+    keyword_symbols: (_) => make_keyword("symbols"),
 
     // Keywords in attribute
-    keyword_ro: (_) => /ro/i,
-    keyword_rw: (_) => /rw/i,
-    keyword_zp: (_) => /zp/i,
-    keyword_bss: (_) => /bss/i,
-    keyword_yes: (_) => /yes/i,
-    keyword_no: (_) => /no/i,
-    keyword_overwrite: (_) => /overwrite/i,
-    keyword_bin: (_) => /bin/i,
-    keyword_o65: (_) => /o65/i,
-    keyword_atari: (_) => /atari/i,
-    keyword_small: (_) => /small/i,
-    keyword_large: (_) => /large/i,
-    keyword_linux: (_) => /linux/i,
-    keyword_osa65: (_) => /osa65/i,
-    keyword_cc65: (_) => /cc65/i,
-    keyword_opencbm: (_) => /opencbm/i,
-    keyword_constructor: (_) => /constructor/i,
-    keyword_destructor: (_) => /destructor/i,
-    keyword_interruptor: (_) => /interruptor/i,
-    keyword_increasing: (_) => /increasing/i,
-    keyword_decreasing: (_) => /decreasing/i,
-    keyword_zeropage: (_) => /zeropage/i,
-    keyword_direct: (_) => /direct/i,
-    keyword_abs: (_) => /abs/i,
-    keyword_absolute: (_) => /absolute/i,
-    keyword_near: (_) => /near/i,
-    keyword_far: (_) => /far/i,
-    keyword_long: (_) => /long/i,
-    keyword_dword: (_) => /dword/i,
-    keyword_export: (_) => /export/i,
-    keyword_import: (_) => /import/i,
-    keyword_weak: (_) => /weak/i,
+    keyword_ro: (_) => make_keyword("ro"),
+    keyword_rw: (_) => make_keyword("rw"),
+    keyword_zp: (_) => make_keyword("zp"),
+    keyword_bss: (_) => make_keyword("bss"),
+    keyword_yes: (_) => make_keyword("yes"),
+    keyword_no: (_) => make_keyword("no"),
+    keyword_overwrite: (_) => make_keyword("overwrite"),
+    keyword_bin: (_) => make_keyword("bin"),
+    keyword_o65: (_) => make_keyword("o65"),
+    keyword_atari: (_) => make_keyword("atari"),
+    keyword_small: (_) => make_keyword("small"),
+    keyword_large: (_) => make_keyword("large"),
+    keyword_linux: (_) => make_keyword("linux"),
+    keyword_osa65: (_) => make_keyword("osa65"),
+    keyword_cc65: (_) => make_keyword("cc65"),
+    keyword_opencbm: (_) => make_keyword("opencbm"),
+    keyword_constructor: (_) => make_keyword("constructor"),
+    keyword_destructor: (_) => make_keyword("destructor"),
+    keyword_interruptor: (_) => make_keyword("interruptor"),
+    keyword_increasing: (_) => make_keyword("increasing"),
+    keyword_decreasing: (_) => make_keyword("decreasing"),
+    keyword_zeropage: (_) => make_keyword("zeropage"),
+    keyword_direct: (_) => make_keyword("direct"),
+    keyword_abs: (_) => make_keyword("abs"),
+    keyword_absolute: (_) => make_keyword("absolute"),
+    keyword_near: (_) => make_keyword("near"),
+    keyword_far: (_) => make_keyword("far"),
+    keyword_long: (_) => make_keyword("long"),
+    keyword_dword: (_) => make_keyword("dword"),
+    keyword_export: (_) => make_keyword("export"),
+    keyword_import: (_) => make_keyword("import"),
+    keyword_weak: (_) => make_keyword("weak"),
 
     // Fields
-    field_o65: (_) => /o65/i,
-    field_atari: (_) => /atari/i,
-    field_condes: (_) => /condes/i,
-    field_startaddress: (_) => /startaddress/i,
+    field_o65: (_) => make_field("o65"),
+    field_atari: (_) => make_field("atari"),
+    field_condes: (_) => make_field("condes"),
+    field_startaddress: (_) => make_field("startaddress"),
 
     // Attribute names
-    attr_start: (_) => /start/i,
-    attr_size: (_) => /size/i,
-    attr_type: (_) => /type/i,
-    attr_fill: (_) => /fill/i,
-    attr_define: (_) => /define/i,
-    attr_file: (_) => /file/i,
-    attr_load: (_) => /load/i,
-    attr_run: (_) => /run/i,
-    attr_offset: (_) => /offset/i,
-    attr_align: (_) => /align/i,
-    attr_optional: (_) => /optional/i,
-    attr_os: (_) => /os/i,
-    attr_version: (_) => /version/i,
-    attr_import: (_) => /import/i,
-    attr_export: (_) => /export/i,
-    attr_runad: (_) => /runad/i,
-    attr_initad: (_) => /initad/i,
-    attr_segment: (_) => /segment/i,
-    attr_label: (_) => /label/i,
-    attr_count: (_) => /count/i,
-    attr_order: (_) => /order/i,
-    attr_default: (_) => /default/i,
-    attr_addrsize: (_) => /addrsize/i,
-    attr_value: (_) => /value/i,
-    attr_bank: (_) => /bank/i,
+    attr_start: (_) => make_attr("start"),
+    attr_size: (_) => make_attr("size"),
+    attr_type: (_) => make_attr("type"),
+    attr_fill: (_) => make_attr("fill"),
+    attr_define: (_) => make_attr("define"),
+    attr_file: (_) => make_attr("file"),
+    attr_load: (_) => make_attr("load"),
+    attr_run: (_) => make_attr("run"),
+    attr_offset: (_) => make_attr("offset"),
+    attr_align: (_) => make_attr("align"),
+    attr_optional: (_) => make_attr("optional"),
+    attr_os: (_) => make_attr("os"),
+    attr_version: (_) => make_attr("version"),
+    attr_import: (_) => make_attr("import"),
+    attr_export: (_) => make_attr("export"),
+    attr_runad: (_) => make_attr("runad"),
+    attr_initad: (_) => make_attr("initad"),
+    attr_segment: (_) => make_attr("segment"),
+    attr_label: (_) => make_attr("label"),
+    attr_count: (_) => make_attr("count"),
+    attr_order: (_) => make_attr("order"),
+    attr_default: (_) => make_attr("default"),
+    attr_addrsize: (_) => make_attr("addrsize"),
+    attr_value: (_) => make_attr("value"),
+    attr_bank: (_) => make_attr("bank"),
 
     // Expression
     _expression: ($) =>
@@ -326,6 +338,33 @@ module.exports = grammar({
     default_file: (_) => "%O",
 
     // Comment
-    comment: (_) => seq("#", /.*/),
+    comment: (_) => token(seq("#", /.*/)),
   },
 });
+
+/**
+ * Make keyword
+ *
+ * @param {string} name
+ */
+function make_keyword(name) {
+  return new RegExp(name, "i");
+}
+
+/**
+ * Make field name
+ *
+ * @param {string} name
+ */
+function make_field(name) {
+  return new RegExp(name, "i");
+}
+
+/**
+ * Make attribute name
+ *
+ * @param {string} name
+ */
+function make_attr(name) {
+  return new RegExp(name, "i");
+}

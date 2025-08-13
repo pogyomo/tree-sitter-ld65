@@ -6,9 +6,7 @@
       "camelcase": "LD65",
       "title": "ld65",
       "scope": "source.ld65",
-      "file-types": [
-        "ld65"
-      ],
+      "file-types": ["ld65"],
       "injection-regex": "^ld65$",
       "class-name": "TreeSitterLd65"
     }
@@ -16,7 +14,7 @@
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "ld65 grammer for tree-sitter",
+    "description": "ld65 grammar for tree-sitter",
     "authors": [
       {
         "name": "pogyomo",

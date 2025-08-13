@@ -1,4 +1,4 @@
-"""ld65 grammer for tree-sitter"""
+"""ld65 grammar for tree-sitter"""
 
 from importlib.resources import files as _files
 

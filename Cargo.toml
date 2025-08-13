@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-ld65"
-description = "ld65 grammer for tree-sitter"
+description = "ld65 grammar for tree-sitter"
 version = "0.1.0"
 authors = ["pogyomo <pogyomo@gmail.com>"]
 license = "MIT"

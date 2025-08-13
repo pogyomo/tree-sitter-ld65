@@ -1,5 +1,5 @@
 /**
- * @file ld65 grammer for tree-sitter
+ * @file ld65 grammar for tree-sitter
  * @author pogyomo <pogyomo@gmail.com>
  * @license MIT
  */

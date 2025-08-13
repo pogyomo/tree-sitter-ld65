@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-ld65",
   "version": "0.1.0",
-  "description": "ld65 grammer for tree-sitter",
+  "description": "ld65 grammar for tree-sitter",
   "repository": "https://github.com/pogyomo/tree-sitter-ld65",
   "license": "MIT",
   "author": {

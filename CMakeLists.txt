@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-ld65
         VERSION "0.1.0"
-        DESCRIPTION "ld65 grammer for tree-sitter"
+        DESCRIPTION "ld65 grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/pogyomo/tree-sitter-ld65"
         LANGUAGES C)
 
